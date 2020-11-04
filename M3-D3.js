@@ -42,20 +42,15 @@ window.onload = function () {
       if (i % 2) {
         btn[i].innerText = "Hide";
         btn[i].addEventListener("click", function () {
-          hideBtn(btn[i]);
+          hideBtn(i);
         });
       }
     }
   };
   editBtn();
-  function hideBtn(btn) {
-    console.log("clk");
-    console.log(
-      btn.parentElement.parentElement.parentElement.parentElement
-        .firstElementChild.src
-    );
-    btn.parentElement.parentElement.parentElement.parentElement.firstElementChild.src =
-      "";
+  function hideBtn(i) {
+    let j = Math.floor(i / 2);
+    cards[j].firstElementChild.src = "";
   }
 };
 
