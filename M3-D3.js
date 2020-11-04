@@ -40,6 +40,7 @@ window.onload = function () {
       searchImg(searchTerm, count);
       count++;
     }
+    count === 3 ? alertFiveSec() : "";
   });
 
   let btn = document.getElementsByClassName("btn-outline-secondary");
@@ -58,9 +59,12 @@ window.onload = function () {
     let j = Math.floor(i / 2);
     cards[j].classList.toggle("d-none");
   }
-};
 
-function takeImg() {
-  let clone = document.querySelector(".card-img-top").cloneNode(true);
-  document.querySelector("#tryout").firstElementChild.replaceWith(clone);
-}
+  const alertFiveSec = () => {
+    setTimeout(() => alert("alert for 5 seconds"), 5000);
+  };
+  function takeImg() {
+    let clone = document.querySelector(".card-img-top").cloneNode(true);
+    document.querySelector("#tryout").firstElementChild.replaceWith(clone);
+  }
+};
