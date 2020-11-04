@@ -19,8 +19,12 @@ window.onload = function () {
   function addImg(img, cardsNbr) {
     console.log(img[0].url);
     cards[cardsNbr].firstElementChild.classList.toggle("bd-placeholder-img");
-    let newImg = document.createElement("div");
-    newImg.innerHTML = `<img class="card-img-top img-fluid" width="100%" height="225px" src=${img[0].url}>`;
+    let newImg = document.createElement("img");
+    newImg.classList = "card-img-top img-fluid";
+    newImg.style.width = "100%";
+    newImg.style.height = "225px";
+    newImg.src = img[0].url;
+    newImg.style.objectFit = "cover";
     cards[cardsNbr].firstElementChild.replaceWith(newImg);
   }
   loadImgBtn.addEventListener("click", function () {
@@ -31,8 +35,25 @@ window.onload = function () {
   });
 
   let btn = document.getElementsByClassName("btn-outline-secondary");
-  let editBtn = [];
-  for (let i = 0; i < btn.length; i++) {
-    i % 2 ? editBtn.push(btn[i]) : "";
+  const editBtn = function () {
+    for (let i = 0; i < btn.length; i++) {
+      if (i % 2) {
+        btn[i].innerText = "Hide";
+        btn[i].addEventListener("click", function () {
+          hideBtn(btn[i]);
+        });
+      }
+    }
+  };
+  editBtn();
+  function hideBtn(btn) {
+    console.log("clk");
+    console.log(
+      "img-url :",
+      btn.parentElement.parentElement.parentElement.parentElement
+        .firstElementChild.src
+    );
+    btn.parentElement.parentElement.parentElement.parentElement.firstElementChild.src =
+      "";
   }
 };
