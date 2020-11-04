@@ -55,4 +55,5 @@ window.onload = function () {
     btn.parentElement.parentElement.parentElement.parentElement.firstElementChild.src =
       "";
   }
+  let nineMin = document.getElementsByClassName("text-muted");
 };
