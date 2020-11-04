@@ -18,7 +18,10 @@ window.onload = function () {
   }
   function addImg(img, cardsNbr) {
     console.log(img[0].url);
-    cards[cardsNbr].firstElementChild.src = img[0].url;
+    cards[cardsNbr].firstElementChild.classList.toggle("bd-placeholder-img");
+    let newImg = document.createElement("div");
+    newImg.innerHTML = `<img class="card-img-top img-fluid" width="100%" height="225px" src=${img[0].url}>`;
+    cards[cardsNbr].firstElementChild.replaceWith(newImg);
   }
   loadImgBtn.addEventListener("click", function () {
     searchImg("burger", 0);
