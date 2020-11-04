@@ -29,4 +29,10 @@ window.onload = function () {
   loadImg2Btn.addEventListener("click", function () {
     searchImg("tea", 1);
   });
+
+  let btn = document.getElementsByClassName("btn-outline-secondary");
+  let editBtn = [];
+  for (let i = 0; i < btn.length; i++) {
+    i % 2 ? editBtn.push(btn[i]) : "";
+  }
 };
