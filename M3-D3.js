@@ -49,7 +49,6 @@ window.onload = function () {
   function hideBtn(btn) {
     console.log("clk");
     console.log(
-      "img-url :",
       btn.parentElement.parentElement.parentElement.parentElement
         .firstElementChild.src
     );
