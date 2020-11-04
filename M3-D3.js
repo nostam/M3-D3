@@ -9,6 +9,7 @@ window.onload = function () {
   let loadImgBtn = document.querySelector(".btn.btn-primary");
   let loadImg2Btn = document.querySelector(".btn.btn-secondary");
   let cards = document.querySelectorAll(".album .card");
+  let nineMin = document.getElementsByClassName("text-muted");
   function searchImg(keyword, cardsNbr) {
     fetch(`http://www.splashbase.co/api/v1/images/search?query=${keyword}`)
       .then(handleErrors)
@@ -26,6 +27,7 @@ window.onload = function () {
     newImg.src = img[0].url;
     newImg.style.objectFit = "cover";
     cards[cardsNbr].firstElementChild.replaceWith(newImg);
+    nineMin[2 + cardsNbr].innerText = img[0].id; // ex6
   }
   loadImgBtn.addEventListener("click", function () {
     searchImg("burger", 0);
@@ -55,10 +57,9 @@ window.onload = function () {
     btn.parentElement.parentElement.parentElement.parentElement.firstElementChild.src =
       "";
   }
-  let nineMin = document.getElementsByClassName("text-muted");
 };
 
 function takeImg() {
   let clone = document.querySelector(".card-img-top").cloneNode(true);
-  document.querySelector("#tryout").firstElementChild.replaceWith(clone)
+  document.querySelector("#tryout").firstElementChild.replaceWith(clone);
 }
