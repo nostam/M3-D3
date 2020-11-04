@@ -1,5 +1,6 @@
 function handleErrors(response) {
   if (!response.ok) {
+    alert("you are in trouble");
     throw Error(response.statusText);
   }
   return response;
