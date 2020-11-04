@@ -57,3 +57,8 @@ window.onload = function () {
   }
   let nineMin = document.getElementsByClassName("text-muted");
 };
+
+function takeImg() {
+  let clone = document.querySelector(".card-img-top").cloneNode(true);
+  document.querySelector("#tryout").firstElementChild.replaceWith(clone)
+}
