@@ -50,7 +50,7 @@ window.onload = function () {
   editBtn();
   function hideBtn(i) {
     let j = Math.floor(i / 2);
-    cards[j].firstElementChild.src = "";
+    cards[j].classList.toggle("d-none");
   }
 };
 
