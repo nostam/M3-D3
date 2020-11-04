@@ -4,7 +4,7 @@ function handleErrors(response) {
   }
   return response;
 }
-
+let count = 1;
 window.onload = function () {
   let loadImgBtn = document.querySelector(".btn.btn-primary");
   let loadImg2Btn = document.querySelector(".btn.btn-secondary");
@@ -33,7 +33,12 @@ window.onload = function () {
     searchImg("burger", 0);
   });
   loadImg2Btn.addEventListener("click", function () {
-    searchImg("tea", 1);
+    let searchTerm = document.getElementsByClassName("form-control")[0].value;
+    if (searchTerm !== "") {
+      console.log(searchTerm);
+      searchImg(searchTerm, count);
+      count++;
+    }
   });
 
   let btn = document.getElementsByClassName("btn-outline-secondary");
