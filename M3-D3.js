@@ -27,6 +27,6 @@ window.onload = function () {
     searchImg("burger", 0);
   });
   loadImg2Btn.addEventListener("click", function () {
-    searchImg("coke", 1);
+    searchImg("tea", 1);
   });
 };
